@@ -183,7 +183,7 @@ The robot’s center of mass is expected to be maintained in the supported polyg
 <p></p>
 
 <h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>1	Number of continuous swing time sample points
+<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Number of continuous swing time sample points
 </h3>
 <p>The examples we used above have only two continuous swing time sample points for each state. The longer one state lasts, the more the robot will move to the corresponding supported polygon. The robot will face a different supported polygon in the next state, and this means that the robot is supposed to move more during the state transfer period to remain stable if the state transfer is left/right or (forward/backward)&(left/right). More swing time sample points could also imply less stance states. Both of the situations indicate the possibility of instability. We could have a look at one of the examples:
 </p>
@@ -209,7 +209,7 @@ The robot’s center of mass is expected to be maintained in the supported polyg
 <p></p>
 
 <h3>
-<a id="rather-drive-stick" class="anchor" href="#rather-drive-stick" aria-hidden="true"><span class="octicon octicon-link"></span></a>1	Number of stance states between two swing states
+<a id="rather-drive-stick" class="anchor" href="#rather-drive-stick" aria-hidden="true"><span class="octicon octicon-link"></span></a>Number of stance states between two swing states
 </h3>
 <p>We have at least one stance time sample point between two swing states in the examples of 1. Stance states provide more state transfer time and therefore is helpful to keeping the whole process’s stability. Here is one of the examples:
 </p>
