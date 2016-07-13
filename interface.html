@@ -26,22 +26,29 @@ The interface consists of 4*13 small rectangles. 4=number of limbs, 13=stridenum
 <p></p>
 
 <h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Background</h3>
-<p>The Geodesics in Heat problem could be divided into 3 basic steps for a fixed time t:
+<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Appendix Constraint</h3>
+<p>There are 3 things about the added constraints that we need to consider.
 </p>
-<ul>
-  <li> Integrate the heat flow for some fixed time t</li>
-  <li> Evaluate the vector field</li>
-  <li> Solve the Poisson equation </li>
-</ul>
-<p>Among which the first part heat equation and the third part Poisson equation are both linear equations, and therefore could be solved by plugging into a paralleled linear solver. Various paralleled solvers could be adopted according to the inputs. The process of introducing the matrices, however, still needs parallelization. What is more, some iterative scheme may be needed to further improve the accuracy of this method. Our goal is to first solve the parallel problem in introducing the matrices, then use iterative scheme to further improve the method’s accuracy. We would expand the method to other objects like grids and point clouds if have time.
-
-
+<li>If the last constraint state from cycle1 is the starting state of a swing period in cycle1.</li>
+<p></p>
+<p>Then we need to add an appendix swing constraint after it since a swing period could not have a single time sample point.
 </p>
+</p><p>
+<li>If the first constraint state from cycle2 is the starting state of a swing period in cycle2.
+</li>
+<p></p>
+<p>Then we need to add an appendix stance constraint before it otherwise the constraint value assigned to yPositions in the transition optimization process would be different from that in cycle2.
+</p>
+<p></p>
+<li>If the first constraint state from cycle2 is the end state of a swing period in cycle2.</li>
+<p></p>
+<p>Then we need to add an appendix swing constraint before it otherwise the swing period would have a single time sample point in the transition process.
+</p>
+<p></p>
 
 <h3>
-<a id="rather-drive-stick" class="anchor" href="#rather-drive-stick" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Challenge</h3>
-<p>The accuracy of the heat method depends on the particular choice of spatial discretization, so we need to take convergence into consideration when choosing the appropriate solvers.
+<a id="rather-drive-stick" class="anchor" href="#rather-drive-stick" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cursor</h3>
+<p>Represents the current position on the timeline.
 </p>
 
 <!--<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p> -->
