@@ -19,7 +19,7 @@ The robot’s center of mass is expected to be maintained in the supported polyg
 </div>
 </p>
 <p></p>
-<p>Basically for an arbitrary robot, it would be more stable for it to move along its long axis (the axis on which it has the longest length) than the short one. Focused on the movements of the center of mass and its relative positions to the supported polygons at different time sample points, I come up with the following factors when may affect the stability of the transition process:
+<p>Basically for an arbitrary robot, it would be more stable for it to move along its long axis (the axis on which it has the longest length) than the short one. Focused on the movements of the center of mass and its relative positions to the supported polygons at different time sample points, I came up with the following factors which may affect the stability of the transition process:
 </p>
 <p></p>
 <h3>Sequence of limb</h3>
@@ -62,6 +62,65 @@ The robot’s center of mass is expected to be maintained in the supported polyg
 <p>
 <div class = "box" align= "center">
    <img src="img/stance.png" />
+</div>
+</p>
+<p></p>
+<p>The transferring from one state to another among the first 4 states would cause the robot’s center of mass to move as follows:
+</p>
+<p>
+<div class = "box" align= "center">
+   <img src="img/table1.png" />
+</div>
+</p>
+<p></p>
+<p>I then tested a few state sequence on the transition between the motion plan of migrating backward and the motion plan of migrating forward.
+</p>
+<p></p>
+<p>My assumption is that the robot would prefer those state transfers moving forward/backward than those moving left/right based on the following two reasons:
+</p>
+<li>As is mentioned above, moving forward/backward is more stable than moving left/right;
+</li>
+<li>The target of the transition is just to change the moving forward speed. It may cause disturbance if we move left/right a lot in the whole process.
+</li>
+<p></p>
+<p>I thus designed the following scored table based on the assumptions:
+</p>
+<p>
+<div class = "box" align= "center">
+   <img src="img/table2.png" />
+</div>
+</p>
+<p></p>
+<p>The smaller the total score is, the better we predict the transition. Moving (forward/backward)&(left/right) get 1.5 because it has one advantage: moving forward/backward and two disadvantages: moving left/right and moving a longer distance than the other two.
+</p>
+<p></p>
+<p>The smaller the total score is, the better we predict the transition. Moving (forward/backward)&(left/right) get 1.5 because it has one advantage: moving forward/backward and two disadvantages: moving left/right and moving a longer distance than the other two.
+</p>
+<p></p>
+<p>We then have:
+</p>
+<p>
+<div class = "box" align= "center">
+   <img src="img/table3.png" />
+</div>
+</p>
+<p></p>
+<p>Here are the designed transitions and the predicted scores. Notice that we also add one footfall pattern state from motion plan 1 and motion plan 2 respectively to monitor the process between the transition and the motion plans.
+</p>
+<p>
+<div class = "box" align= "center">
+   <img src="img/table4.png" />
+</div>
+</p>
+<p></p>
+<p>The results are as follows:
+</p>
+<p></p>
+<p>F: (State4)->State1->State2->State3->State4->State1->(State2)
+</p>
+<p>
+<div class = "box" align= "center">
+   <img src="img/F.png" />
 </div>
 </p>
 <p></p>
