@@ -132,48 +132,62 @@ The robot’s center of mass is expected to be maintained in the supported polyg
    <img src="img/G.png" />
 </div>
 </p>
-
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/oTTxavdAiEE?rel=0" frameborder="0" allowfullscreen></iframe>
 <p></p>
-<p>G: (State4)->State1->State3->State2->State4->State1->(State2)
+<p>H: (State4)->State1->State4->State2->State3->State1->(State2)
 </p>
 <p>
 <div class = "box" align= "center">
-   <img src="img/G.png" />
+   <img src="img/H.png" />
 </div>
 </p>
 
 <p></p>
-<p>G: (State4)->State1->State3->State2->State4->State1->(State2)
+<p>L: (State2)->State3->State4->State1->State2->State1->(State2)
 </p>
 <p>
 <div class = "box" align= "center">
-   <img src="img/G.png" />
+   <img src="img/L.png" />
 </div>
 </p>
 
 <p></p>
-<p>G: (State4)->State1->State3->State2->State4->State1->(State2)
+<p>M: (State2)->State3->State2->State1->State4->State1->(State2)
 </p>
 <p>
 <div class = "box" align= "center">
-   <img src="img/G.png" />
+   <img src="img/M.png" />
 </div>
 </p>
 
 <p></p>
-<p>G: (State4)->State1->State3->State2->State4->State1->(State2)
+<p>N: (State2)->State3->State1->State2->State4->State1->(State2)
 </p>
 <p>
 <div class = "box" align= "center">
-   <img src="img/G.png" />
+   <img src="img/N.png" />
 </div>
 </p>
+<p></p>
+<p>One thing to notice is that G and H get the same score, but H behaves worse than G. N scores more than M but behaves better.
+</p>
+<p></p>
+<p>We then find that both H and M have two continuous (forward/backward)&(left/right) transfers(H has (State4)->State1->State4; M has (State2)->State3->State2 and State1->State4->State1) which affect the stability of the robot(the robot is supposed to have a big acceleration to change its velocity), and thus add a 1 score penalty if two same state transfers appear together. We then have:
+</p>
+<p>
+<div class = "box" align= "center">
+   <img src="img/table5.png" />
+</div>
+</p>
+<p></p>
 
 <h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Code Structure and Speed up Focus
+<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>1	Number of continuous swing time sample points
 </h3>
-<p>The whole process of the algorithm could be divided into the following 5 parts:
+<p>The examples we used above have only two continuous swing time sample points for each state. The longer one state lasts, the more the robot will move to the corresponding supported polygon. The robot will face a different supported polygon in the next state, and this means that the robot is supposed to move more during the state transfer period to remain stable if the state transfer is left/right or (forward/backward)&(left/right). More swing time sample points could also imply less stance states. Both of the situations indicate the possibility of instability. We could have a look at one of the examples:
 </p>
+<p></p>
+
 <ul>
   <li>Read information from input files</li>
   <li>Build up the information needed for the heat method</li>
