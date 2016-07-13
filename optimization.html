@@ -18,7 +18,10 @@ The robot’s center of mass is expected to be maintained in the supported polyg
    <img src="img/forward_right.png" />
 </div>
 </p>
-
+<p></p>
+<p>Basically for an arbitrary robot, it would be more stable for it to move along its long axis (the axis on which it has the longest length) than the short one. Focused on the movements of the center of mass and its relative positions to the supported polygons at different time sample points, I come up with the following factors when may affect the stability of the transition process:
+</p>
+<p></p>
 <h3>Summary of Contributions</h3>
 
 <p>I realized the paralleled implementation of the Geodesics in Heat Method taking advantages of both CPU(using OpenMP) and GPU(using OpenGL) on Mac, achieving a 16% speed up. Techniques like SIMD, atomic operations, exclusive-scan, lock and dense matrix have been attempted and carefully chosen. More things about Geodesics in Heat could be found on Professor Crane's <a target="_blank" href ="http://www.cs.cmu.edu/~kmcrane/Projects/GeodesicsInHeat/index.html
