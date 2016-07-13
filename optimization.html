@@ -2,10 +2,18 @@
 
     <section class="main-content">
       <h2>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a><b>Writeup</b></h2>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a><b>Optimization Constraints Design</b></h2>
+<p>We assume that a transition process is good if the robot is stable in the whole process.
+The robot’s center of mass is expected to be maintained in the supported polygon if we want it to appear stable. In the current situation, the robot is like:
+</p>
+<p>
+<div class = "box" align= "center">
+   <img src="img/robot.png" />
+</div>
+</p>
+
 
 <h3>Summary of Contributions</h3>
-
 
 <p>I realized the paralleled implementation of the Geodesics in Heat Method taking advantages of both CPU(using OpenMP) and GPU(using OpenGL) on Mac, achieving a 16% speed up. Techniques like SIMD, atomic operations, exclusive-scan, lock and dense matrix have been attempted and carefully chosen. More things about Geodesics in Heat could be found on Professor Crane's <a target="_blank" href ="http://www.cs.cmu.edu/~kmcrane/Projects/GeodesicsInHeat/index.html
 ">website</a>, and a basic <a target="_blank" href ="https://drive.google.com/file/d/0B4N9CDlARzhUTThPNHlaTms4V3M/view?usp=sharing
