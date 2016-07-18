@@ -190,32 +190,31 @@ The robot’s center of mass is expected to be maintained in the supported polyg
 <p>
 I tested those state sequence on the transition between the motion plan of migrating forward & turning left and the motion plan of migrating forward at last. The results are almost the same as above, except that we need to take the speed changes on the short axis into consideration. For example, when the robot starts to transit from motion plan one, it has an initial speed of turning left. If, at the beginning part of the transition, we still let its center of mass to move to the left side, selecting State 3 or State 4, for example, the robot would probably be unstable. We could take a look at the following examples:
 </p>
-  <p>I2: (State2)->State3->State4->State1->State2->State1->(State2)
-</p>
+<h3>I2: (State2)->State3->State4->State1->State2->State1->(State2)
+</h3>
 <p>
 <div class = "box" align= "center">
    <img src="img/L1.png" />
 </div>
 </p>
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/q3Bv3IB-Dow?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/m5sTbaSnVTA?rel=0" frameborder="0" allowfullscreen></iframe>
 <p></p>
-<p>J2: (State2)->State3->State2->State1->State4->State1->(State2)
-</p>
+<h3>J2: (State2)->State3->State2->State1->State4->State1->(State2)</h3>
 <p>
 <div class = "box" align= "center">
    <img src="img/M1.png" />
 </div>
 </p>
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/ffauS1_7Vg4?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/5H4Yx1HL-L8?rel=0" frameborder="0" allowfullscreen></iframe>
 <p></p>
-<p>K2: (State2)->State3->State1->State2->State4->State1->(State2)
-</p>
+<h3>K2: (State2)->State3->State1->State2->State4->State1->(State2)
+</h3>
 <p>
 <div class = "box" align= "center">
    <img src="img/N1.png" />
 </div>
 </p>
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/yevK0D1BKLI?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/411Gej44fFk?rel=0" frameborder="0" allowfullscreen></iframe>
 <p></p>
 <p>
 Compared with the same footfall patterns from moving backward to moving forward:
