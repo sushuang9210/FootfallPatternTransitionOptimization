@@ -3,6 +3,7 @@
     <section class="main-content">
       <h2>
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a><b>Optimization Constraints Design</b></h2>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a><b>Four-limb robot</b></h2>
 <p>We assume that a transition process is good if the robot is stable in the whole process.
 The robot’s center of mass is expected to be maintained in the supported polygon if we want it to appear stable. In the current situation, the robot is like:
 </p>
@@ -381,6 +382,108 @@ Compared with the same footfall patterns from moving backward to moving forward:
 <p>3) have at least one swing point for each limb;</p>
 <p>4) have a all-stance time sample point after each swing period;</p>
 <li>Use <a href ="http://www.cs.rochester.edu/u/kautz/walksat/">Walksat</a> to generate 10 candidate footfall patterns. Score, rank, and assign the best result to the current footfall pattern.</li>
+
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a><b>Six-limb robot</b></h2>
+<p>Center of mass also plays an important role in the transition process for six-limb robots. To make the robot stable, we want as more limbs on floor as possible. Sometimes, when the robot has a low speed, we could even let all six limbs be in stance for the entire transition period:
+</p>
+<p>E1:</p>
+<p>
+<div class = "box" align= "center">
+   <img src="img/sixLimbs/E1.png" />
+</div>
+</p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/dsWEK0fNc34?rel=0" frameborder="0" allowfullscreen></iframe>
+<p></p>
+
+<p>If we set all legs be in stance at all times for a long-step one, on the other hand, the optimization will not converge. We thus need to find a balance between maximizing the total area of supported polygon and satisfying the given constraints.
+</p>
+
+<p>Too many legs in air frustrates the robot. The original speed plus the frequent movement of center of mass makes it wriggle like a hurt animal.
+</p>
+
+<p>H1:</p>
+<p>
+<div class = "box" align= "center">
+   <img src="img/sixLimbs/H1.png" />
+</div>
+</p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/6qXJPsYcm-Q?rel=0" frameborder="0" allowfullscreen></iframe>
+<p></p>
+
+<p>E2:</p>
+<p>
+<div class = "box" align= "center">
+   <img src="img/sixLimbs/E2.png" />
+</div>
+</p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/ek8Af-qq8Hw?rel=0" frameborder="0" allowfullscreen></iframe>
+<p></p>
+
+<p>F2:</p>
+<p>
+<div class = "box" align= "center">
+   <img src="img/sixLimbs/F2.png" />
+</div>
+</p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/sn6M2bzxLj8?rel=0" frameborder="0" allowfullscreen></iframe>
+<p></p>
+
+<p>We also hate to see a limb keep kicking the ground all the time:
+</p>
+<p>G2:</p>
+<p>
+<div class = "box" align= "center">
+   <img src="img/sixLimbs/G2.png" />
+</div>
+</p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/b6Ds6K3Kz4A?rel=0" frameborder="0" allowfullscreen></iframe>
+<p></p>
+
+<p>We therefore want a transition which:
+</p>
+<li>Converges and has as many limbs on the ground as possible;
+</li>
+<li>Does not have a limb kicking the ground.
+</li>
+
+<p>I designed some footfall patterns based on the above rules and they work out fine:
+</p>
+<p>F1:</p>
+<p>
+<div class = "box" align= "center">
+   <img src="img/sixLimbs/F1.png" />
+</div>
+</p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/o5wsrmR_VMQ?rel=0" frameborder="0" allowfullscreen></iframe>
+<p></p>
+
+<p>G1:</p>
+<p>
+<div class = "box" align= "center">
+   <img src="img/sixLimbs/G1.png" />
+</div>
+</p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/V5_WMZi-t_I?rel=0" frameborder="0" allowfullscreen></iframe>
+<p></p>
+
+<p>H2:</p>
+<p>
+<div class = "box" align= "center">
+   <img src="img/sixLimbs/H2.png" />
+</div>
+</p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/HR92JAnvZig?rel=0" frameborder="0" allowfullscreen></iframe>
+<p></p>
+
+<p>I2:</p>
+<p>
+<div class = "box" align= "center">
+   <img src="img/sixLimbs/I2.png" />
+</div>
+</p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/m5sTbaSnVTA?rel=0" frameborder="0" allowfullscreen></iframe>
+<p></p>
+
 
 <h3>
 <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>References<a name="ref"></a></h3>
