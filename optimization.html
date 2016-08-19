@@ -441,50 +441,94 @@ Compared with the same footfall patterns from moving backward to moving forward:
 
 <p>We therefore want a transition which:
 </p>
-<li>Converges and has as many limbs on the ground as possible;
+<li>Converges and has as many limbs on the ground as possible. Specifically, we want a robot to have at least 3 legs on the ground at a time.
 </li>
-<li>Does not have a limb kicking the ground.
+<li>Does not have a limb kicking the ground all the time, asking the standing periods to last at least three time sample points when the same limb swings twice.
 </li>
 
-<p>I designed some footfall patterns based on the above rules and they work out fine:
+<p>I generated 10 footfall patterns using walksat based on the above rules. Some of them look good:
 </p>
-<p>F1:</p>
+<p>J2:</p>
 <p>
 <div class = "box" align= "center">
-   <img src="img/sixLimbs/F1.png" />
+   <img src="img/sixLimbs/J2.png" />
 </div>
 </p>
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/o5wsrmR_VMQ?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/aXIGMgeojac?rel=0" frameborder="0" allowfullscreen></iframe>
 <p></p>
 
-<p>G1:</p>
+<p>K2:</p>
 <p>
 <div class = "box" align= "center">
-   <img src="img/sixLimbs/G1.png" />
+   <img src="img/sixLimbs/K2.png" />
 </div>
 </p>
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/V5_WMZi-t_I?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/tuZzn2B2MZE?rel=0" frameborder="0" allowfullscreen></iframe>
 <p></p>
-
-<p>H2:</p>
+<p>While some still wriggle a little:
+</p>
+<p>L2:</p>
 <p>
 <div class = "box" align= "center">
-   <img src="img/sixLimbs/H2.png" />
+   <img src="img/sixLimbs/L2.png" />
 </div>
 </p>
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/HR92JAnvZig?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/6_N8oqq6Fxc?rel=0" frameborder="0" allowfullscreen></iframe>
 <p></p>
-
-<p>I2:</p>
+<p>To make the result seem both reasonable and stable, I ran 300 iterations of optimization for each of the 10 footfall patterns and picked up 4 of them with the lowest optimization cost.
+</p>
+<p>To get the most stable footfall pattern (not wriggle), I calculated the moving distance of the robot’s center of mass between each two neighboring time sample points, picked the largest value for each footfall pattern, and selected the one with the smallest maximum moving distance.
+</p>
+<p>The results worked out fine:
+</p>
+<p>F0:</p>
 <p>
 <div class = "box" align= "center">
-   <img src="img/sixLimbs/I2.png" />
+   <img src="img/sixLimbs/F0.png" />
 </div>
 </p>
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/m5sTbaSnVTA?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/eWJsHqcIBQE?rel=0" frameborder="0" allowfullscreen></iframe>
 <p></p>
-
-
+<p>G0:</p>
+<p>
+<div class = "box" align= "center">
+   <img src="img/sixLimbs/G0.png" />
+</div>
+</p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/nyFTPMFvqHc?rel=0" frameborder="0" allowfullscreen></iframe>
+<p></p>
+<p>I1:</p>
+<p>
+<div class = "box" align= "center">
+   <img src="img/sixLimbs/I1.png" />
+</div>
+</p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/pnmnIHf8In0?rel=0" frameborder="0" allowfullscreen></iframe>
+<p></p>
+<p>M2:</p>
+<p>
+<div class = "box" align= "center">
+   <img src="img/sixLimbs/M2.png" />
+</div>
+</p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/h3Z6tGeeuOM?rel=0" frameborder="0" allowfullscreen></iframe>
+<p></p>
+<p>N2:</p>
+<p>
+<div class = "box" align= "center">
+   <img src="img/sixLimbs/N2.png" />
+</div>
+</p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/_eJTrbjAuf0?rel=0" frameborder="0" allowfullscreen></iframe>
+<p></p>
+<p>F3:</p>
+<p>
+<div class = "box" align= "center">
+   <img src="img/sixLimbs/F3.png" />
+</div>
+</p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/o2Y6Fs13dZA?rel=0" frameborder="0" allowfullscreen></iframe>
+<p></p>
 <h3>
 <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>References<a name="ref"></a></h3>
 <ol>1. "Local Search Strategies for Satisfiability Testing."  Bart Selman, Henry Kautz, and Bram Cohen.</ol>
