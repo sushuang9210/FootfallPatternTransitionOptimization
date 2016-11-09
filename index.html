@@ -17,16 +17,20 @@
 		$(document).ready(function() {
 			$("#body").load("interface.html");
 
-      $("#optimization").click(function() {
-        $("#body").load("optimization.html");
+			$("#constraints&objectives").click(function() {
+        $("#body").load("constraints&objectives.html");
       });
 
 			$("#interface").click(function() {
 				$("#body").load("interface.html");
 			});
 
-			$("#transitions").click(function() {
-				$("#body").load("transitions.html");
+			$("#simulationResults").click(function() {
+				$("#body").load("simulationResults.html");
+			});
+
+			$("#previousWork&comparisons").click(function() {
+				$("#body").load("previousWork&comparisons.html");
 			});
 		});
 
@@ -44,11 +48,12 @@
   <body>
     <section class="page-header">
       <h1 class="project-name">Footfall Pattern Transition Optimization</h1>
-      <h2 class="project-tagline">2016 Summer Internship Project at <a target="_blank" href ="https://www.ri.cmu.edu" class="white">CMU Robotics Institute</a></h2>
+      <h2 class="project-tagline">2016 Research Project at <a target="_blank" href ="https://www.ri.cmu.edu" class="white">CMU Robotics Institute</a></h2>
 			<h2 class="project-tagline">Instructor: <a target="_blank" href ="http://www.cs.cmu.edu/~scoros/" class="white">Professor Stelian Coros</a></h2>
       <a id="interface" href="#" class="btn">Interface</a>
-      <a id="optimization" href="#" class="btn">Optimization</a>
-			<a id="transitions" href="#" class="btn">Transitions</a>
+      <a id="constraints&objectives" href="#" class="btn">Constraints&Objectives</a>
+			<a id="simulationResults" href="#" class="btn">Simulation Results</a>
+			<a id="previousWork&comparisons" href="#" class="btn">Previous Work & Comparisons</a>
 			<a target="_blank" href="https://drive.google.com/file/d/0B4N9CDlARzhUbGEwbnMwZUZIQ00/view?usp=sharing" class="btn">PDF</a>
       <a target="_blank" href="https://github.com/sushuang9210/FootfallPatternTransitionOptimization" class="btn">View on GitHub</a>
 	  <!--
