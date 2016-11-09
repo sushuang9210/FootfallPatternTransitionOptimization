@@ -5,7 +5,7 @@
 </p>
 <p>
 <div class = "box" align= "center">
-   <img src="constraints&objectives/OptimizedResult.png" />
+   <img src="constraints/OptimizedResult.png" />
 </div>
 </p>
 <iframe width="640" height="360" src="https://www.youtube.com/embed/WKfmc49pWZU?rel=0" frameborder="0" allowfullscreen></iframe>
@@ -16,7 +16,7 @@ Below are the added constraints&objectives and the conditions happened without t
 Listed in the interface page.
 <p>
 <div class = "box" align= "center">
-   <img src="constraints&objectives/LockConstraint.png" />
+   <img src="constraints/LockConstraint.png" />
 </div>
 </p>
 
@@ -24,7 +24,7 @@ Listed in the interface page.
 <p>The swing state is supposed to last for a period of time, and single-swing point is not supposed to appear in the whole transition process.</p>
 <p>
 <div class = "box" align= "center">
-   <img src="constraints&objectives/NoSingleSwingConstraint.png" />
+   <img src="constraints/NoSingleSwingConstraint.png" />
 </div>
 </p>
 
@@ -33,12 +33,12 @@ Listed in the interface page.
 </p>
 <p>
 <div class = "box" align= "center">
-   <img src="constraints&objectives/TotalPointConstraint1.png" />
+   <img src="constraints/TotalPointConstraint1.png" />
 </div>
 </p>
 <p>
 <div class = "box" align= "center">
-   <img src="constraints&objectives/TotalPointConstraint2.png" />
+   <img src="constraints/TotalPointConstraint2.png" />
 </div>
 </p>
 
@@ -46,7 +46,7 @@ Listed in the interface page.
 The robot is expected to show a strong motor coordination ability. We thus want each limb's behavior to be as similar as possible. The difference between the total number of swing points for each two limbs shall be <=2:
 <p>
 <div class = "box" align= "center">
-   <img src="constraints&objectives/LimbSymmetryConstraint.png" />
+   <img src="constraints/LimbSymmetryConstraint.png" />
 </div>
 </p>
 <iframe width="640" height="360" src="https://www.youtube.com/embed/i-9fVF8YHUg?rel=0" frameborder="0" allowfullscreen></iframe>
@@ -57,7 +57,7 @@ To prevent epileptic robot limbs, we ask that the total number of 'switching' ti
 swing to stance or from stance to swing) at that time.):
 <p>
 <div class = "box" align= "center">
-   <img src="constraints&objectives/LimbFrequency1.png" />
+   <img src="constraints/LimbFrequency1.png" />
 </div>
 </p>
 <iframe width="640" height="360" src="https://www.youtube.com/embed/EseZWEyIgAY?rel=0" frameborder="0" allowfullscreen></iframe>
@@ -65,7 +65,7 @@ swing to stance or from stance to swing) at that time.):
 We also require the robot to stand for at least 3 time sample points when it swings the same limb twice:
 <p>
 <div class = "box" align= "center">
-   <img src="constraints&objectives/LimbFrequency2.png" />
+   <img src="constraints/LimbFrequency2.png" />
 </div>
 </p>
 <iframe width="640" height="360" src="https://www.youtube.com/embed/mGUECK-wpAc?rel=0" frameborder="0" allowfullscreen></iframe>
@@ -75,19 +75,19 @@ We also require the robot to stand for at least 3 time sample points when it swi
 For each time sample point, we set a few limb constraints to make the robot's motion look stable. First of all, The robot shall have at least 3 limbs on the ground at a time, otherwise it may shake fiercely and risk falling down:
 <p>
 <div class = "box" align= "center">
-   <img src="constraints&objectives/SingleTimePointConstraint1.png" />
+   <img src="constraints/SingleTimePointConstraint1.png" />
 </div>
 </p>
 <iframe width="640" height="360" src="https://www.youtube.com/embed/MfKraYWI8I4?rel=0" frameborder="0" allowfullscreen></iframe>
 Even if there are 3 stance limbs, we ask that the formed supported polygon area should not be less than a certain value:
 <p>
 <div class = "box" align= "center">
-   <img src="constraints&objectives/SupportedPolygon.png" />
+   <img src="constraints/SupportedPolygon.png" />
 </div>
 </p>
 <p>
 <div class = "box" align= "center">
-   <img src="constraints&objectives/ObtuseTriangleConstraint.png" />
+   <img src="constraints/ObtuseTriangleConstraint.png" />
 </div>
 </p>
 <iframe width="640" height="360" src="https://www.youtube.com/embed/l10cuk6mQjI?rel=0" frameborder="0" allowfullscreen></iframe>
@@ -98,7 +98,7 @@ To prevent a epileptic robot, we try to minimize the total number of 'jumping' t
 ):
 <p>
 <div class = "box" align= "center">
-   <img src="constraints&objectives/TimeLineFrequency.png" />
+   <img src="constraints/TimeLineFrequency.png" />
 </div>
 </p>
 <iframe width="640" height="360" src="https://www.youtube.com/embed/WKgaQzit2NQ?rel=0" frameborder="0" allowfullscreen></iframe>
