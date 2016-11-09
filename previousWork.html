@@ -2,109 +2,25 @@
 <h2>
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a><b>Previous work & Comparisons</b></h2>
 <p>We compared our work with previous research in this field and got the following results:</p>
-<p>
-</p>
+<h3>Young Tabloid Method</h3>
 <p>
 <div class = "box" align= "center">
-   <img src="img/constraints/OptimizedResult.png" />
+   <img src="img/constraints/YoungTabloidMethod.png" />
 </div>
 </p>
-<iframe width="853" height="480" src="https://www.youtube.com/embed/WKfmc49pWZU?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="853" height="480" src="https://www.youtube.com/embed/XoNW4NqSfv8?rel=0" frameborder="0" allowfullscreen></iframe>
 <p></p>
-Below are the added constraints&objectives and the conditions happened without them:
-
-<h3>Lock Constraint</h3>
-Listed in the interface page.
+<h3>Our Method</h3>
 <p>
 <div class = "box" align= "center">
-   <img src="img/constraints/LockConstraint.png" />
+   <img src="img/constraints/MIPMethod.png" />
 </div>
 </p>
-
-<h3>No Single Swing Point Constraint</h3>
-<p>The swing state is supposed to last for a period of time, and single-swing point is not supposed to appear in the whole transition process.</p>
-<p>
-<div class = "box" align= "center">
-   <img src="img/constraints/NoSingleSwingConstraint.png" />
-</div>
-</p>
-
-<h3>Total Stance Points Constraint</h3>
-<p>The total number of swing points should take up 30%~40%(about 1/3) of the total swing/stance points in the whole process. Otherwise the following motion planning optimization process may not converge, and the robot's motion may look bizarre.
-</p>
-<p>
-<div class = "box" align= "center">
-   <img src="img/constraints/TotalPointConstraint1.png" />
-</div>
-</p>
-<p>
-<div class = "box" align= "center">
-   <img src="img/constraints/TotalPointConstraint2.png" />
-</div>
-</p>
-
-<h3>Limb Symmetry Constraint</h3>
-The robot is expected to show a strong motor coordination ability. We thus want each limb's behavior to be as similar as possible. The difference between the total number of swing points for each two limbs shall be <=2:
-<p>
-<div class = "box" align= "center">
-   <img src="img/constraints/LimbSymmetryConstraint.png" />
-</div>
-</p>
-<iframe width="853" height="480" src="https://www.youtube.com/embed/i-9fVF8YHUg?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="853" height="480" src="https://www.youtube.com/embed/ypBbMjn36RM?rel=0" frameborder="0" allowfullscreen></iframe>
 <p></p>
-
-<h3>Limb Frequency Constraint</h3>
-To prevent epileptic robot limbs, we ask that the total number of 'switching' time-sample points for each limb should be <=2(We call a time-sample point 'switch' if the limb changes its state(from
-swing to stance or from stance to swing) at that time.):
-<p>
-<div class = "box" align= "center">
-   <img src="img/constraints/LimbFrequency1.png" />
-</div>
-</p>
-<iframe width="853" height="480" src="https://www.youtube.com/embed/EseZWEyIgAY?rel=0" frameborder="0" allowfullscreen></iframe>
-<p></p>
-We also require the robot to stand for at least 3 time sample points when it swings the same limb twice:
-<p>
-<div class = "box" align= "center">
-   <img src="img/constraints/LimbFrequency2.png" />
-</div>
-</p>
-<iframe width="853" height="480" src="https://www.youtube.com/embed/mGUECK-wpAc?rel=0" frameborder="0" allowfullscreen></iframe>
-<p></p>
-
-<h3>Single Time Point Constraint</h3>
-For each time sample point, we set a few limb constraints to make the robot's motion look stable. First of all, The robot shall have at least 3 limbs on the ground at a time, otherwise it may shake fiercely and risk falling down:
-<p>
-<div class = "box" align= "center">
-   <img src="img/constraints/SingleTimePointConstraint1.png" />
-</div>
-</p>
-<iframe width="853" height="480" src="https://www.youtube.com/embed/MfKraYWI8I4?rel=0" frameborder="0" allowfullscreen></iframe>
-<p></p>
-
-Even if there are 3 stance limbs, we ask that the formed supported polygon area should not be less than a certain value:
-<p>
-<div class = "box" align= "center">
-   <img src="img/constraints/ObtuseTriangleConstraint.png" />
-</div>
-</p>
-<p>
-<div class = "box" align= "center">
-   <img src="img/constraints/SupportedPolygon.png" />
-</div>
-</p>
-<iframe width="853" height="480" src="https://www.youtube.com/embed/l10cuk6mQjI?rel=0" frameborder="0" allowfullscreen></iframe>
-<p></p>
-
-<h3>Time-line Frequency Objective</h3>
-To prevent a epileptic robot, we try to minimize the total number of 'jumping' time-sample points(We call a time-sample point 'jump' if one of the limbs changes its state (from swing to stance or from stance to swing) at that time.
-):
-<p>
-<div class = "box" align= "center">
-   <img src="img/constraints/TimeLineFrequency.png" />
-</div>
-</p>
-<iframe width="853" height="480" src="https://www.youtube.com/embed/WKgaQzit2NQ?rel=0" frameborder="0" allowfullscreen></iframe>
+<h3>
+<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>References<a name="ref"></a></h3>
+<ol>Haynes, Galen C., Fred R. Cohen, and Daniel E. Koditschek. "Gait transitions for quasi-static hexapedal locomotion on level ground." Robotics Research. Springer Berlin Heidelberg, 2011. 105-121.</ol>
 
       <footer class="site-footer">
       <span class="site-footer-owner"><a href="https://github.com/sushuang9210/FootfallPatternTransitionOptimization">Footfall Pattern Transition Optimization</a> is maintained by <a href="https://github.com/sushuang9210">Shuang Su</a>.</span>
